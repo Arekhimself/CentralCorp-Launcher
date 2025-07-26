@@ -30,7 +30,8 @@ class Login {
         document.getElementById('login-btn').textContent = t('play');
         document.getElementById('cancel-mojang-btn').textContent = t('cancel');
         document.getElementById('password-reset-link').textContent = t('forgot_password');
-        document.getElementById('new-user-link').textContent = t('no_account');
+        //document.getElementById('new-user-link').textContent = t('no_account');
+		document.getElementById('new-user-link').textContent = t('');
     }
 
     async refreshData() {
@@ -163,9 +164,11 @@ class Login {
         const newuserurl = `${azauth}user/register`;
         const passwordreseturl = `${azauth}user/password/reset`;
 
-        this.newuser = document.querySelector(".new-user");
-        this.newuser.innerHTML = t('no_account');
-        this.newuser.addEventListener('click', () => shell.openExternal(newuserurl));
+		//this.newuser = document.querySelector(".new-user");
+		//this.newuser.innerHTML = t('no_account');
+		this.newuser = document.querySelector(".new-user");
+		this.newuser.innerHTML = t('');
+		this.newuser.addEventListener('click', () => shell.openExternal(newuserurl));
 
         this.passwordreset = document.querySelector(".password-reset");
         this.passwordreset.innerHTML = t('forgot_password');
